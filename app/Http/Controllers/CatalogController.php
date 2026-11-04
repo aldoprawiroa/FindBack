@@ -35,4 +35,11 @@ class CatalogController extends Controller
             'posts' => SecurityPost::query()->orderBy('name')->get(),
         ]);
     }
+        public function show(FoundItem $item): View
+    {
+        $item->load(['category:id,name', 'securityPost:id,name']);
+        return view('items.show', [
+            'item' => $item,
+        ]);
+    }
 }

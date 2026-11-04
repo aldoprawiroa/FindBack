@@ -61,7 +61,7 @@
         </div>
         <div class="item-card-copy">
             <p class="item-status status-label" data-state="published">Tersedia di Pos</p>
-            <h2><a href="#">{{ $item->title }}</a></h2>
+            <h2><a href="{{ route('items.show', $item) }}">{{ $item->title }}</a></h2>
             <p><strong>Lokasi Temuan:</strong> {{ $item->found_location }}</p>
             <p><strong>Pos Satpam:</strong> {{ $item->securityPost->name }}</p>
             <p class="fine-print">
